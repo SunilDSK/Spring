@@ -2,7 +2,7 @@ package sound;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("Walkman")
 public class Walkman implements Music {
     public void play() {
         System.out.println("This is from Walkman");
