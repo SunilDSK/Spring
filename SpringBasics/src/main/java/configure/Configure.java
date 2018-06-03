@@ -3,6 +3,7 @@ package configure;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import sound.CDPlayer;
+import sound.SoundSystem;
 import sound.Walkman;
 
 
@@ -17,5 +18,10 @@ public class Configure {
     @Bean
     public Walkman walkman() {
         return new Walkman();
+    }
+
+    @Bean
+    public SoundSystem soundSystem(){
+        return new SoundSystem(new Walkman());
     }
 }
