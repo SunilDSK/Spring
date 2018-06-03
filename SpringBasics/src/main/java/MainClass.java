@@ -10,10 +10,10 @@ public class MainClass {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(Configure.class);
         // Get a Bean of CDPlayer class
-        CDPlayer cdPlayer = (CDPlayer) applicationContext.getBean("CDPlayer");
+        CDPlayer cdPlayer = applicationContext.getBean(CDPlayer.class);
         cdPlayer.play();
-
-        Walkman walkman = (Walkman) applicationContext.getBean("Walkman");
+        // Get a Bean of Walkman class
+        Walkman walkman = applicationContext.getBean(Walkman.class);
         walkman.play();
     }
 }
