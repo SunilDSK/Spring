@@ -18,6 +18,14 @@ public class soundTest {
     @Autowired
     private Walkman walkman;
 
+    // Autowire by component name Walkman
+    @Autowired
+    private Music Walkman;
+
+    // Autowire by component name CDPlayer
+    @Autowired
+    private Music CDPlayer;
+
     @org.junit.Test
     public void testCDPlayer_play() {
         assertNotNull(cdPlayer);
@@ -25,8 +33,20 @@ public class soundTest {
     }
 
     @org.junit.Test
+    public void testCDPlayer_play_ComponentName() {
+        assertNotNull(CDPlayer);
+        CDPlayer.play();
+    }
+
+    @org.junit.Test
     public void testWalkman_play() {
         assertNotNull(walkman);
         walkman.play();
+    }
+
+    @org.junit.Test
+    public void testWalkman_play_ComponentName() {
+        assertNotNull(Walkman);
+        Walkman.play();
     }
 }
